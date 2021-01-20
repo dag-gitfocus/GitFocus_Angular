@@ -1,0 +1,78 @@
+
+<nav class="navbar navbar-dark bg-dark flex-md-nowrap shadow navbar-expand-lg">
+ 
+  <a  href="#"><img src="assets/images/gitFocus_logo.PNG"></a>
+      <ul class="nav navbar-nav nav-flex-icons ml-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" ><i class="fa fa-user"></i> &nbsp;<span class="clearfix d-none d-sm-inline-block" >Welcome</span></a>
+        </li>
+      
+        <li class="nav-item dropdown" >
+          
+          <label class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+             {{userName}}
+        </label>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" style="padding-left: 5px;">
+            <a href="#" (click)="logout()">Logout</a>
+            
+          </div>
+        </li>
+      </ul>
+    </nav>
+    
+
+
+
+
+<!--<nav class="navbar navbar-dark bg-dark flex-md-nowrap p-0 shadow">
+  <a  href="#"><img src="assets/images/gitFocus_logo.PNG"></a>
+ 
+
+  
+    <li class="nav-item dropdown">
+      
+     
+      <a class="nav-link dropdown-toggle" style="padding-left: 3px;" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-user"></i> Welcome {{userName}}</a>
+      <div class="dropdown-menu" >
+        <a class="dropdown-item" href="{{logoutURL}}">Sign Out</a>
+        
+       
+      </div>
+    </li>
+  </nav>-->
+      
+      
+ 
+
+
+
+<!--<nav class="navbar navbar-dark bg-dark flex-md-nowrap shadow navbar-expand-lg">
+ 
+  <a  href="#"><img src="assets/images/gitFocus_logo.PNG"></a>
+ 
+  <ul class="navbar-nav w-100">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+
+      <li class="nav-item dropdown">
+        <div class="welcome">    
+          <i class="fa fa-user"></i>&nbsp;<label style="color: white;">Welcome {{userName}}</label>
+          <a class="nav-link dropdown-toggle username" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="username">{{userName}}</a>
+        </a>
+        <div class="dropdown-content" aria-labelledby="navbarDropdownMenuLink-333">
+         
+          <a  href="#" routerLink="/logout">Sign Out</a>
+        </div>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+  </ul>
+
+</nav>-->

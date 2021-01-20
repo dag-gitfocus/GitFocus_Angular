@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: gitui-deployment
+    labels:
+        app: gitui
+        type: frontend
+spec:
+    template:
+        metadata:
+            name: gitui-pod
+            labels:
+                app: gitui
+                type: frontend
+        spec:
+            containers:
+            - name: gitui-container
+              image: priya2802/gitfocus_service_kube
+              ports:
+              - containerPort: 4200  
+    replicas: 3
+    selector: 
+        matchLabels:
+            type: frontend

@@ -1,0 +1,69 @@
+<form>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+        <label for="user">Select User</label>
+        <select  class="form-control" id = "user" [(ngModel)]="user" name="user"  (ngModelChange)="getRepoAndBranchListSpecificToUser()">style="width: 200px;">
+        <option value="">Select</option>
+        <option [value] = "uname" *ngFor="let uname of userList">
+          {{uname}}
+        </option>
+        </select>
+    </div>
+
+    <div class="col-md-4">
+        <label for="repo">Select Repository</label>
+        <select  class="form-control" id = "repo" [(ngModel)]="repo" name="repo" (ngModelChange)="getBranchDetails()">style="width: 200px;">
+        <option value="" >Select</option>
+        <option [value] = "rep.key" *ngFor="let rep of map| keyvalue">
+          {{rep.key}}
+        </option>
+        </select>
+
+    </div>
+
+    <div class="col-md-4">
+        <label for="branch">Select Branch</label>
+        <select  class="form-control" id = "branch" [(ngModel)]="branch" name="branch" (change)="getUserCommitDetails()" >style="width: 200px;">
+        <option value="">Select</option>
+        <option [value] = "bran" *ngFor="let bran of branchList">
+          {{bran}}
+        </option>
+        </select>
+
+    </div>
+
+</div>
+</div>
+
+    </form>
+    <br>
+    <div class="container">
+        <div  *ngIf="buChartData">
+            <h5  align="center"><strong>Total Commits: {{this.datas.totalCommits}}</strong></h5>
+        </div>
+        <br>
+        <div class="row" >
+      <div class="col-md-5" style="display: block" *ngIf="buChartData">
+      <canvas height="200" baseChart 
+              [data]="pieChartData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              [options]="chartOptions"
+              [colors]="Colors"
+              [legend]="true">
+            </canvas>
+          </div>
+
+          <div class="col-md-5" style="display: block" *ngIf="buChartData1">
+            <canvas height="200" baseChart 
+                    [data]="pieChartData1"
+                    [labels]="pieChartLabels1"
+                    [chartType]="pieChartType1"
+                    [options]="chartOptions1"
+                    [colors]="Colors1"
+                    [legend]="true">
+                  </canvas>
+                </div>
+        </div>
+    </div>

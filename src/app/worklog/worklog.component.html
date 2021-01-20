@@ -1,0 +1,86 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3">
+  <h4 class="h4" >Work Log</h4>
+</div>
+<div class="card-group">
+  <div class="card">
+  <div class="card-body">
+ 
+  
+      <form #worklogForm="ngForm" (ngSubmit)="onSubmit(worklogForm)">
+                  
+  <section id="actions" class="py-2 mb-3 bg-light">
+      <div class="container">
+  <div class="row">
+          <div class="col-md-3">
+             
+              <label for="team"><b>Team</b> </label>
+              <select  class="form-control " id = "team"  name="team"  [(ngModel)]= "team"  (ngModelChange)="getTeamList()" required>
+                  <option value="">Select</option>
+                  <option value ="{{res}}" *ngFor="let res of this.teamList">{{res}}</option>
+              
+              
+              </select>
+              <!--<div  [hidden]="team.valid || team.pristine" class="alert alert-danger">
+                Team is required
+           </div>-->
+           </div>
+       
+              
+                  <div class="col-md-3">
+                   
+                          <label for="repository"><b>Repository </b></label>{{response}}
+                          <select  class="form-control" [(ngModel)]="repo" id = "repository" name="repository"  (ngModelChange)="getCommitDetails()" required>
+                              <option value="">Select</option>
+                              <option value = "{{repo}}" *ngFor="let repo of this.repoList">{{repo}}</option>
+                              </select>
+                             <!-- <div  [hidden]="repository.valid || repository.pristine" class="alert alert-danger">
+                                  Repository is required
+                             </div>-->
+                  </div>
+            
+                  <div class="col-md-3">
+                     
+                          <label ><b>Period </b></label>
+                          <select class="form-control" id="timeperiod"  name="timeperiod" [(ngModel)]="timeperiod" required (ngModelChange)="getCommitDetails()" >
+                              <option value="" >Select</option>
+                              <option value ="oneweek">1 week</option>
+                              <option value ="twoweek">2 weeks</option>
+</select>
+<!--<div  [hidden]="timeperiod.valid || timeperiod.pristine" class="alert alert-danger">
+  Timeperiod is required
+</div>-->
+
+                  </div>
+                  <div class="col-md-3" >
+                    <div class="form-group" >
+                        <label><b> Select End Date </b> </label>
+                      <br>
+                      <input type="date" class="form-control " id="endDate" name="endDate"  [(ngModel)]="endDate"  required [max]= "getToday()" (ngModelChange)="getCommitDetails()"  style="width: 200px;">
+                      
+                     </div>
+                    
+                  </div>
+                 
+  </div>
+      </div>
+
+  </section>
+
+
+
+ 
+
+      <div *ngIf="commit && pull" >
+        <canvas id="myChart" baseChart width="700" height="300"
+        [datasets]="bubbleChartData"
+        [options]="bubbleChartOptions"
+        [colors]="bubbleChartColors"
+        [legend]="bubbleChartLegend"
+        [chartType]="bubbleChartType"
+          (chart-click)="onClick($event)">/canvas>>
+          </canvas>
+      </div>
+  
+    </form>
+
+   

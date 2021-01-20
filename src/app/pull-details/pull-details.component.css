@@ -1,0 +1,20 @@
+.table1 td, .table1 th {
+  padding:0 .75rem;
+  vertical-align: top;
+
+}
+
+#table1, td, th, tr {
+  border-top:0 ;
+  border-bottom:0 ;
+  
+ 
+ }
+
+.prdisplay{
+  width: 33%;
+  display:inline-block;
+  vertical-align: top;
+ 
+ 
+}

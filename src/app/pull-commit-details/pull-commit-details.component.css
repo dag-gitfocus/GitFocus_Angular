@@ -1,0 +1,72 @@
+td.wrappable,
+table.table td.wrappable {
+   word-break: normal ;
+}
+
+ 
+#table1, td, th, tr {
+  border-top:none;
+  border-bottom:0 ;
+  
+ 
+ }
+
+ hr {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+ 
+ .vl { 
+   border-left: 2px solid lightgray; 
+   height: 250px;
+   left: 20%;
+   right:20%;
+ }
+
+ .div1 {
+  width:1000px;
+  height: auto;
+  background-color: #FFFFE0;
+  border:1px solid;
+  position:relative;
+  overflow:auto;
+}
+
+.div2 {
+  width:2000px;
+  height: auto;
+  
+}
+/* .cdk-global-overlay-wrapper {
+  pointer-events: auto;
+  display: block;
+  position: relative;
+  overflow: auto;
+  text-align: center;
+} */
+
+.prdisplay{
+  width: 33%;
+  display:inline-block;
+ 
+ 
+}
+.files span {
+  padding-right: 10px;
+}
+.files span.line-added {
+  color: green;
+}
+.files span.line-added::before {
+  content: '++';
+}
+.files span.line-removed {
+  color: red;
+}
+.files span.line-removed::before {
+  content: '--';
+}
+

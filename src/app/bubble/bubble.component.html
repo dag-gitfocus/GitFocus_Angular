@@ -1,0 +1,29 @@
+
+<div class="card-group">
+  <div class="card">
+  <div class="card-body">
+
+
+<div align='center'><h6> Git Activities for <span class="capitalize">{{clickedUser}}</span> on {{commitDate | date:'dd-MMM-yyyy'}}  </h6></div>
+<div align='right'>
+  <i class="fa fa-arrow-left fa-lg" aria-hidden="true" (click)=back()> Back </i>
+  </div>
+<div class="col-md-10" >  
+  <div class="form-group">  
+  <div *ngIf="this.showChart" class="card-body">
+      <div class="chart-wrapper">
+  <canvas id="myChart" baseChart
+    [datasets]="bubbleChartData"
+    [options]="bubbleChartOptions"
+    [colors]="bubbleChartColors"
+    [legend]="bubbleChartLegend"
+    [chartType]="bubbleChartType"
+    (chart-click)="onClick($event)">
+    </canvas>
+</div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>

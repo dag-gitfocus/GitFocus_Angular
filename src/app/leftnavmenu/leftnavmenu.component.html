@@ -1,0 +1,43 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav class="bg-dark" id="sidebar" [ngClass]="{'active': isCollapsed}">
+        <div class="sidebar-header">
+            <!--<h3>GitFocus</h3>-->
+            <!--<h3><img width=180 src="assets/images/gitFocus_logo.PNG"></h3>
+            <strong>GF</strong>-->
+        </div>
+
+
+        <ul class="list-unstyled components bg-dark">
+
+                     <li>
+                <a href="#operationalReportsSubmenu" data-toggle="collapse" aria-expanded="false"
+                    class="dropdown-toggle">
+                    <i><img height=22 width=22 src="assets/images/operationalreports.PNG"></i><span
+                        class="d-none d-sm-inline-block">Operational Reports</span></a>
+                <ul class="collapse list-unstyled" id="operationalReportsSubmenu">
+
+                    <li class="nav-item" [routerLinkActive]="['active']"><a href="#operationalReportsSubmenu" data-toggle="collapse" aria-expanded="false" class="nav-link"
+                            [routerLink]="['worklog']"><i><img height=22 width=22
+                                    src="assets/images/wlog.PNG"></i><span class="d-none d-sm-inline-block">Work
+                                Log</span></a></li>
+                    <li class="nav-item" [routerLinkActive]="['active']"><a href="#operationalReportsSubmenu" data-toggle="collapse" aria-expanded="false" class="nav-link"
+                            [routerLink]="['projecttimeline']"><i><img height=22 width=22 src="assets/images/projectt.PNG"></i><span class="d-none d-sm-inline-block">Project Timeline</span></a></li>
+                    <li class="nav-item" [routerLinkActive]="['active']"><a href="#operationalReportsSubmenu" class="nav-link"
+                            [routerLink]="['snapshot']"><i><img height=22 width=22 src="assets/images/camera.PNG"></i><span class="d-none d-sm-inline-block">Snapshot</span></a></li>
+                    <li class="nav-item" [routerLinkActive]="['active']"><a href="#operationalReportsSubmenu" class="nav-link"
+                            [routerLink]="['dailyUpdate']"><i><img height=22 width=22
+                                src="assets/images/daily.PNG"></i><span class="d-none d-sm-inline-block">Daily Updates</span></a></li>
+                </ul>
+            </li>
+
+           
+
+
+        </ul>
+
+        <button type="button" id="sidebarCollapse" (click)="toggle()" class="btn btn-default">
+            <i class="fa fa-align-justify" style="color:white"></i>
+
+        </button>
+    </nav>

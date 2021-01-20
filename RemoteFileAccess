@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    stages {
+        stage('Deploy in Cluster') {
+            steps {
+                 script {
+                     withCredentials([sshUserPrivateKey(credentialsId: 'AWSK8', keyFileVariable: 'keyFile', passphraseVariable: '', usernameVariable: 'ubuntu')]) {
+                     echo keyFile
+                     print 'keyFile=' + keyFile
+                     print 'keyFileContent=' + readFile(keyFile)
+                     def remote = [name: 'K8 Cluster Invoke', host: 'ec2-13-53-42-78.eu-north-1.compute.amazonaws.com', identityFile : keyFile, user: 'ubuntu', allowAnyHosts: true]
+                     sh 'ls -l'
+                     sshCommand remote: remote, command: "ls -l"   
+                     sshPut remote: remote, from: './AngularDeployment.yaml', into: './gitfocusapp'
+                     sshPut remote: remote, from: './AngularLoadBalService.yaml', into: './gitfocusapp'
+                     sshCommand remote: remote, command: "kubectl create -f ./gitfocusapp/AngularDeployment.yaml"
+                     sshCommand remote: remote, command: "kubectl create -f ./gitfocusapp/AngularLoadBalService.yaml"
+                     }
+                 }
+            }
+        }
+    }
+    post {
+          always {
+	          cleanWs() 
+		   /*emailext body:'''${DEFAULT_CONTENT}''',
+                            recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                            subject:''' ${DEFAULT_SUBJECT}'''*/
+         }  
+    }
+}

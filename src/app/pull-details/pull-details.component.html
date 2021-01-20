@@ -1,0 +1,77 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">X
+  <!--<mat-icon class="close-icon">X</mat-icon>-->
+ </button>
+  
+
+ <div class="card-group">
+   <div class="card">
+   <div class="card-body">
+ <div align='center'><h5>Pull Request Details</h5></div>
+ 
+ 
+ <hr/>
+ <table class="table1">
+     
+           <tr >
+          <td>
+       
+     <label for="usr"><b>General Information</b></label><br>
+     
+           
+    
+  
+        <img height = 18 width = 18 src="assets/images/pull.PNG">
+        <label for="usr"><b>Pull Request</b></label>
+        <a style="margin-left: 5px;" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"  >
+         <div class= "prdisplay">
+           {{data.pullLength}}
+          </div>
+         </a>
+         <div class="collapse" id="collapseExample" style="width: 100%;padding-left: 20px;">
+         <div class= "prdisplay"  *ngFor="let row of data.pullNos; let i =index">
+         
+          <b>PR-{{row}}</b>
+            
+              <p style="font-family:courier;padding-left: 5px;display: inline-block;"><b>Branch:</b>{{data.branchName && data.branchName[i]}}</p>
+              <p style="font-family:courier;display: inline-block;"><b>Merged:</b>{{data.mergeStatus && data.mergeStatus[i]}}</p>
+              <a data-toggle="collapse" data-parent="#accordion2" data-target="#collapse{{i}}" href="#collapse{{i}}">
+              <p style="font-family:courier;"><b>Commits:</b>{{data.pullCommits && data.pullCommits[i]}}</p>
+              </a>
+              <div class="collapse" id="collapse{{i}}" style="width: 100%;padding-left: 15px;">
+              <div class="prdisplay" *ngFor="let item of createArray(data.pullCommits && data.pullCommits[i]); let j = index" >
+                <button mat-button (click)="commitClick(row,data.branchName[i],data.repo,j+1,data.pUser)">{{j+1}}</button>
+                               
+                
+              </div>
+              
+              </div>
+         </div>
+      </div>
+    
+      </td></tr>
+     
+        <tr>
+        <td>
+        
+        <img height = 15 width = 18 src="assets/images/dag_profile.PNG">&nbsp;<label for="usr">{{data.pUser}}</label><br>
+        <img height = 18 width = 18 src="assets/images/github.PNG">&nbsp;<label for="usr"> {{data.repo}}</label><br>
+        
+        <img height = 15 width = 18 src="assets/images/calendar.PNG">&nbsp;<label for="usr">{{data.createdTime[0]}}</label><br>
+     
+       </td>
+        
+       
+       
+        
+  
+    
+      
+     
+        </table>
+       
+        <hr/>
+           <!-- <button type="button" class="btn btn-default" id="btnclose" data-dismiss="modal" (click)="onCloseCancel()">Close</button>-->
+           <button class="mat-raised-button"(click)="close()">Close</button>
+   </div>
+   </div>
+ </div>

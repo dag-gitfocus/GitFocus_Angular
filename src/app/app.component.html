@@ -1,0 +1,10 @@
+<app-header></app-header>
+<div class="row content">
+    <div [ngClass]="{'col-1': isSideNavCollapsed, 'col-2': !isSideNavCollapsed}">
+        <app-leftnavmenu (sideNavChange)="OnSideNavChange($event)"></app-leftnavmenu>
+        
+    </div>
+    <div class="col-10">
+        <router-outlet></router-outlet>
+    </div>
+</div>

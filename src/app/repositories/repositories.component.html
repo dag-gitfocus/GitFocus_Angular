@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 ">
+    <h4 class="h4">List of Repositories</h4>
+    </div>
+        
+           
+    
+   
+    <div class="card-group">
+        <div class="card">
+        <div class="card-body">
+        
+        
+   
+        
+    <table class="table responsive-table table-bordered">
+        <thead class="thead-light">
+           <tr>
+                    <th class="text-center">Repository ID</th>
+                    <th class="text-center">Repository Name</th>
+                    <th class="text-center">Created By</th>
+                    <th class="text-center">Created Date</th>
+                    
+                </tr>
+            </thead>
+           
+                <tr *ngFor="let res of repoDetails">
+                        <td>{{res.repoId}}</td>
+                        <td (click)="showUserDetails(res.repoName)">  
+                            <a style="color:blueviolet;  text-decoration: underline; cursor: pointer;">
+                            {{res.repoName}}</a></td>
+                        <td>{{res.createdBy}}</td>
+                        <td>{{res.createdDate|date:'dd/MM/yyyy'}}</td>
+                           
+                    </tr>
+ 
+</table>
+</div>
+
+        </div>
+    </div>

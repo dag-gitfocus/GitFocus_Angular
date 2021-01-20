@@ -1,0 +1,146 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">X
+</button>
+
+<div class="card-group">
+<div class="card">
+<div class="card-body">
+<div align='center'><h4>Pull Commit Details</h4></div>
+
+
+
+
+<table class="table responsive-table">
+  
+        <tr >
+       <td>
+    
+  <label for="usr"><b>General Information</b></label><br>
+  
+  
+
+    <img height = 15 width = 18 src="assets/images/pull_old.PNG"><label style="margin-left: 5px;" for="usr">Code Commit</label><br>
+  
+
+      <img height = 15 width = 18 src="assets/images/dag_profile.PNG"><label style="margin-left: 5px;" for="usr">{{data.user}}</label><br>
+    
+  
+      <img height = 15 width = 18 src="assets/images/calendar.PNG"><label style="margin-left: 5px;" for="usr">{{data.pullCommitDate}}</label><br>
+      <img height = 19 width = 18 src="assets/images/github.PNG"><label style="margin-left: 5px;" for="usr">{{data.branch}}</label><br></td>
+    
+    
+      <div class="vl"></div>
+
+  <td>
+    <label for="usr"><b>{{data.sum}}</b> total lines of code affected </label><br>
+  
+    <table class="table responsive-table">
+      <tr>
+        <td width=3%>
+          <label for="usr">New Work </label>
+          </td>
+          <td width=3%>
+          <label><b> {{data.totalFilesAdded}}</b></label>
+        </td>
+        </tr>
+        <tr>
+          <td width=3%>
+      <label for="usr">Legacy refactor</label>
+    </td>
+    <td width=3%>
+      <label><b>{{data.totalLegacy}}</b></label>
+    </td>
+    </tr>
+    <tr>
+      <td width=3%>
+      <label for="usr">Help Others</label>
+    </td>
+    <td width=3%>
+      <label><b> 0</b></label>
+    </td>
+    </tr>
+    <tr>
+
+      <td>
+        <label for="usr">Churn</label>
+      </td>
+      <td>
+        <label><b> 0</b></label>
+      </td>
+      
+     
+
+    </tr>
+   
+   
+    
+    </table>
+  
+    
+     
+      
+        
+      </td>
+  
+    </tr>
+   
+      </table>
+      <hr/>
+      
+      
+      <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+       <th><b>Files</b></th>
+       </a>
+      
+       <div class="collapse" id="collapseTwo" style="width: 100%;padding-left: 15px;">
+        
+         <div class="collapse-group" id="#accordion2">
+           <a data-toggle="collapse" data-parent="#accordion2" data-target="#collapseTwoOne" href="#collapseTwoOne">
+           
+         <p style="font-family:courier;" *ngIf="data.pullCommitDetailsByStatus['modified']">Modified</p>
+      
+     </a>
+       </div>
+
+       <div class="collapse" id="collapseTwoOne">
+        
+         <div class="files" *ngFor="let row of data.pullCommitDetailsByStatus['modified']">
+            <span ><img height=15 width=18 src="assets/images/file.PNG"> {{row.file}}</span>
+           <span class="line-added" title="lines added">{{row.lineAdded || '0'}}</span>
+           <span class="line-removed" title="lines removed">{{row.linesRemoved || '0'}}</span>
+         </div>
+       </div>
+     
+       <div class="collapse-group" id="#accordion2" >
+         <a data-toggle="collapse" data-parent="#accordion2" data-target="#collapseTwoThree" href="#collapseTwoThree" >  
+         <p style="font-family:courier;padding-top: 10px;" *ngIf="data.pullCommitDetailsByStatus['added']">Added</p>
+       </a>
+       </div>
+       <div class="collapse" id="collapseTwoThree">
+         <div class="files" *ngFor="let row of data.pullCommitDetailsByStatus['added']">
+          <span><img height=15 width=18 src="assets/images/file.PNG"> {{row.file}}</span>
+           <span class="line-added">{{row.lineAdded || '0'}}</span>
+           <span class="line-removed">{{row.linesRemoved || '0'}}</span>
+         </div>
+       </div>
+      
+       <div class="collapse-group" id="#accordion2">
+         <a data-toggle="collapse" data-parent="#accordion2" data-target="#collapseTwoThree" href="#collapseTwoFour"> 
+         <p  style="font-family:courier;" *ngIf="data.pullCommitDetailsByStatus['removed']">Removed</p>
+       </a>
+       <div class="collapse" id="collapseTwoFour">
+         <div class="files" *ngFor="let row of data.pullCommitDetailsByStatus['removed']">
+           <span><img height=15 width=18 src="assets/images/file.PNG"> {{row.file}}</span>
+           <span class="line-added">{{row.lineAdded || '0'}}</span>
+           <span class="line-removed">{{row.linesRemoved || '0'}}</span>
+         </div>
+       </div>
+       </div>
+       </div>
+       
+      <hr/>
+         
+         <button class="mat-raised-button"(click)="close()">Close</button>
+        
+</div>
+</div>
+</div>
