@@ -1,6 +1,0 @@
-{
-    "env": {
-        "name": "DEV",
-        "apiUrl": "http://localhost:8888/gitfocus/"
-    }
-}
