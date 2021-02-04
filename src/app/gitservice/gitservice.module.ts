@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders, HttpParams } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+//import { AppConfigService } from '../../environments/app-config.service';
 import { Observable } from 'rxjs';
+import { environment  } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GitserviceModule { 
+  //baseUrl = AppConfigService.setting.env.apiUrl;
   baseUrl = environment.baseUrl;
   commitDetails:any;
   userCommitDetails: any;
@@ -72,6 +74,7 @@ getDailyUserPull(userName: string,repoName: string,commitDate:string,branchName:
 
 getTeamList(unit: string):Observable<any>
 {  
+  console.log('baseUrl' + this.baseUrl);
   return this.http.get(this.baseUrl + 'getTeams/'+unit); 
 }
 
