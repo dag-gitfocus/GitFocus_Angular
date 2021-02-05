@@ -30,15 +30,8 @@ import { PullCommitDetailsComponent } from './pull-commit-details/pull-commit-de
 // import { KeycloakService } from './utils/keycloak.service';
 // import { TokenInterceptor } from './interceptors/token.interceptor';
 import { utils } from 'protractor';
-//import { AppConfigService } from 'src/environments/app-config.service';
 
-// export function initializeAppConfig() {
-//   // return () => initKeyCloak.init().then();
-// }
 
-// export function initializeAppConfig(appConfigService: AppConfigService) {
-//   return () => appConfigService.load().then();
-// }
 
 
 @NgModule({
@@ -73,15 +66,7 @@ import { utils } from 'protractor';
 
   ],
 
-   providers: [ 
-     //AppConfigService,
-    // {
-    //     provide: APP_INITIALIZER,
-    //     useFactory: initializeAppConfig,
-    //     deps: [AppConfigService],
-    //     multi: true
-    // }
-  ],
+   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

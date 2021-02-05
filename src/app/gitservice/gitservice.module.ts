@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders, HttpParams } from '@angular/common/http';
-//import { AppConfigService } from '../../environments/app-config.service';
 import { Observable } from 'rxjs';
 import { environment  } from '../../environments/environment';
 
@@ -8,7 +7,7 @@ import { environment  } from '../../environments/environment';
   providedIn: 'root'
 })
 export class GitserviceModule { 
-  //baseUrl = AppConfigService.setting.env.apiUrl;
+  
   baseUrl = environment.baseUrl;
   commitDetails:any;
   userCommitDetails: any;
