@@ -1,10 +1,10 @@
 FROM node
 
-RUN mkdir  /GitFocusAngular_kube
+RUN mkdir  /GitFocus_Angular
 
-RUN git clone https://github.com/Sesh2020/GitFocusAngular_kube.git
+RUN git clone https://github.com/dag-gitfocus/GitFocus_Angular.git
 
-WORKDIR /GitFocusAngular_kube
+WORKDIR /GitFocus_Angular
 
 RUN npm install -g @angular/cli
 
@@ -14,7 +14,7 @@ RUN pwd
 
 RUN ls -l
 
-RUN mv index.d.ts /GitFocusAngular_kube/node_modules/@types/chart.js
+RUN mv index.d.ts /GitFocus_Angular/node_modules/@types/chart.js
 
 RUN pwd
 
@@ -24,7 +24,7 @@ RUN ng build
 
 EXPOSE 4200
 
-CMD [ "node", "/GitFocusAngular_kube/app.js" ]
+CMD [ "node", "/GitFocus_Angular/app.js" ]
 
 RUN rm -r src output  e2e
 
