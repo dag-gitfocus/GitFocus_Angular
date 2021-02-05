@@ -15,7 +15,6 @@ export const environment = {
   //baseUrl: "http://localhost:8888/gitfocus/",
   //baseUrl: "http://localhost:2100/gitfocus/",
   //baseUrl: "http://ec2-13-126-135-17.ap-south-1.compute.amazonaws.com:2100/gitfocus/"
-
 };
 
 /*

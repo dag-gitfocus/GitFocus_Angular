@@ -7,7 +7,6 @@ import { environment  } from '../../environments/environment';
   providedIn: 'root'
 })
 export class GitserviceModule { 
-  
   baseUrl = environment.baseUrl;
   commitDetails:any;
   userCommitDetails: any;
