@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 //import { KeycloakAngularModule } from 'keycloak-angular';
@@ -30,7 +30,15 @@ import { PullCommitDetailsComponent } from './pull-commit-details/pull-commit-de
 // import { KeycloakService } from './utils/keycloak.service';
 // import { TokenInterceptor } from './interceptors/token.interceptor';
 import { utils } from 'protractor';
+import { AppConfigService } from 'src/environments/app-config.service';
 
+// export function initializeAppConfig() {
+//   // return () => initKeyCloak.init().then();
+// }
+
+export function initializeAppConfig(appConfigService: AppConfigService) {
+  return () => appConfigService.load().then();
+}
 
 
 @NgModule({
@@ -65,7 +73,13 @@ import { utils } from 'protractor';
 
   ],
 
-   providers: [],
+  providers: [AppConfigService,
+    {
+        provide: APP_INITIALIZER,
+        useFactory: initializeAppConfig,
+        deps: [AppConfigService],
+        multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

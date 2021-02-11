@@ -38,7 +38,7 @@ securityContext: {}
 
 service:
   type: LoadBalancer
-  port: 4200
+  port: 4202
 
 ingress:
   enabled: false

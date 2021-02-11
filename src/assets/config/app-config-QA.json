@@ -1,0 +1,6 @@
+{
+    "env": {
+        "name": "QA",
+        "apiUrl": "http://a7157b251c9904f61a194dd755eeacce-423019030.ap-south-1.elb.amazonaws.com:4041/gitfocus/"
+    }
+}
