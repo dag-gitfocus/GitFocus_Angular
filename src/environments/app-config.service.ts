@@ -6,7 +6,7 @@ import { IAppConfig } from './i-app-config';
 export class AppConfigService {
 
     ENVIRONMENTS = {
-        QA: {ENV_NAME:'QA', URL:'a73dce459e0d84613b0b5b66b3f1d11f-836494696.ap-south-1.elb.amazonaws.com', REG:/^a73dce459e0d84613b0b5b66b3f1d11f-836494696.ap-south-1.elb.amazonaws.com/},
+        QA: {ENV_NAME:'QA', URL:'d9143859-gitfocusns-gitfoc-3d5c-2102416299.ap-south-1.elb.amazonaws.com/', REG:/^d9143859-gitfocusns-gitfoc-3d5c-2102416299.ap-south-1.elb.amazonaws.com/},
         PROD: {ENV_NAME:'PROD', URL:'a5c4d7aa7937a47199215a5d99482976-1868549657.ap-south-1.elb.amazonaws.com', REG:/^a5c4d7aa7937a47199215a5d99482976-1868549657.ap-south-1.elb.amazonaws.com/}
     }
 
