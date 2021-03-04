@@ -32,10 +32,10 @@ spec:
       http:
         paths:
           {{- range .paths }}
-          - path: {{ . }}
+          - path: /*
             backend:
-              serviceName: {{ $fullName }}
-              servicePort: {{ $svcPort }}
+              serviceName: "gitfocus-angular"
+              servicePort: 4200
           {{- end }}
     {{- end }}
   {{- end }}
