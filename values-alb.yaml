@@ -48,7 +48,7 @@ ingress:
     }
   hosts:
     - host: chart-example.local
-      paths: []
+      # paths: /*
 spec:
   rules:
     - http:
