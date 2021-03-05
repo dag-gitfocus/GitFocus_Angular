@@ -46,8 +46,8 @@ ingress:
       kubernetes.io/ingress.class: alb
     # kubernetes.io/tls-acme: "true"
     }
-  hosts:
-    - host: chart-example.local
+  #hosts:
+    #- host: chart-example.local
       # paths: /*
 spec:
   rules:
