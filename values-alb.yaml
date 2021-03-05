@@ -49,9 +49,6 @@ ingress:
     - host: chart-example.local
       paths: 
         - path: /*
-            backend:
-              serviceName: "gitfocus-angular"
-              servicePort: 4200
 
   tls: []
   #  - secretName: chart-example-tls
