@@ -79,11 +79,11 @@ service:
   targetPort: 4200
 
 ingress:
-  enabled: true
-  annotations: {
-      kubernetes.io/ingress.class: alb
+  enabled: false
+  annotations: {}
+     # kubernetes.io/ingress.class: alb
     # kubernetes.io/tls-acme: "true"
-    }
+    
   #hosts:
     #- host: chart-example.local
       # paths: /*
