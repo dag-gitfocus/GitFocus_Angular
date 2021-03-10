@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "gitfocus-angular-deployment"
+  namespace: "gitfocus-angular-ns"
+spec:
+  selector:
+    matchLabels:
+      app: "gitfocus-angular-alb"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: "gitfocus-angular-alb"
+    spec:
+      containers:
+      - image: 792429589635.dkr.ecr.ap-south-1.amazonaws.com/gitfocus-angular
+        imagePullPolicy: Always
+        name: "gitfocus-angular-alb-container"
+        ports:
+        - containerPort: 4200
