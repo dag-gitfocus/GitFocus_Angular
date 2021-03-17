@@ -1,6 +1,6 @@
 {
     "env": {
         "name": "PROD",
-        "apiUrl": "http://a1aa733fb7fe74f049b60ba3a70aa492-1388166703.ap-south-1.elb.amazonaws.com:4042/gitfocus/"
+        "apiUrl": "http://afa951373632f42d4a019f54ddf9bbf4-197954466.ap-south-1.elb.amazonaws.com:80/gitfocus/"
     }
 }
