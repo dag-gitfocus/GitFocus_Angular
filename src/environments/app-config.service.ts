@@ -7,7 +7,7 @@ export class AppConfigService {
 
     ENVIRONMENTS = {
         QA: {ENV_NAME:'QA', URL:'d9143859-gitfocusns-gitfoc-3d5c-2102416299.ap-south-1.elb.amazonaws.com/', REG:/^d9143859-gitfocusns-gitfoc-3d5c-2102416299.ap-south-1.elb.amazonaws.com/},
-        PROD: {ENV_NAME:'PROD', URL:'d9143859-gitfocusangularns-71a4-391847287.ap-south-1.elb.amazonaws.com/', REG:/^d9143859-gitfocusangularns-71a4-391847287.ap-south-1.elb.amazonaws.com/}
+        PROD: {ENV_NAME:'PROD', URL:'d9143859-gitfocusns-gitfoc-3d5c-2102416299.ap-south-1.elb.amazonaws.com/', REG:/^d9143859-gitfocusns-gitfoc-3d5c-2102416299.ap-south-1.elb.amazonaws.com/}
     }
 
     static setting : IAppConfig;
