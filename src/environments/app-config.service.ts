@@ -7,7 +7,8 @@ export class AppConfigService {
 
     ENVIRONMENTS = {
         QA: {ENV_NAME:'QA', URL:'localhost/', REG:/^localhost/},
-        PROD: {ENV_NAME:'PROD', URL:'d9143859-gitfocusappns-git-0ce6-1163889977.ap-south-1.elb.amazonaws.com/', REG:/^d9143859-gitfocusappns-git-0ce6-1163889977.ap-south-1.elb.amazonaws.com/}
+        PROD: {ENV_NAME:'PROD', URL:'gitfocusapp.dagsolutions.tk/', REG:/^gitfocusapp.dagsolutions.tk/}
+        //PROD: {ENV_NAME:'PROD', URL:'d9143859-gitfocusappns-git-0ce6-1163889977.ap-south-1.elb.amazonaws.com/', REG:/^d9143859-gitfocusappns-git-0ce6-1163889977.ap-south-1.elb.amazonaws.com/}
     }
 
     static setting : IAppConfig;
