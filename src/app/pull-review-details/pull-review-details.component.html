@@ -36,7 +36,7 @@
               <div class="prdisplay" *ngFor="let row of data.pullNo; let i =index">
 
                 <b>PR-{{row}}</b>
-                <p style="font-family:courier;display: inline-block;"><b>Review Status:</b>{{data.state && data.state[i]}}</p>
+                <p style="font-family:courier;display: inline-flexbox;column-width: 300px;"><b>Review Status:</b>{{data.state && data.state[i]}}</p>
                 <p style="font-family:courier; display: inline-block;"><b>Comment:</b>{{data.reviewComment && data.reviewComment[i]}}</p>
                 <p style="font-family:courier; display: inline-block;"><b>Reviewed At:</b>{{data.reviewedAt && data.reviewedAt[i]}}</p>
               </div>
